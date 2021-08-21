@@ -1,37 +1,42 @@
 import 'package:flutter/material.dart';
+import 'package:news_application/HomeScreen/NewsPart.dart';
 import 'package:news_application/HomeScreen/TabItem.dart';
-import 'package:news_application/Source.dart';
+import 'package:news_application/utility/api/sources.dart';
+
 
 class HomeTabs extends StatefulWidget {
 
-  HomeTabs();
+  List<Sources>sources;
+  HomeTabs(this.sources);
 
   @override
   _HomeTabsState createState() => _HomeTabsState();
 }
 
 class _HomeTabsState extends State<HomeTabs> {
-  final List<Source>sources=[];
+  int SelectedIndex=0;
   @override
-  void initState() {
-    // TODO: implement initState
-    sources.add(new Source('bbcccccccccccc'));
-    sources.add(new Source("cnn"));
-    sources.add(new Source("CMB"));
-    sources.add(new Source("nbB"));
-  }
- @override
   Widget build(BuildContext context) {
-    return DefaultTabController(length: sources.length,
+    return DefaultTabController(length: widget.sources.length,
         child: Container(
-          padding: EdgeInsets.only(top:8),
+          padding: EdgeInsets.only(top:12),
           child: Column(
             children: [
               TabBar(
+                onTap: (index){
+                  setState(() {
+                    SelectedIndex=index;
+                  });
+
+                },
                   isScrollable: true,
                   indicatorColor: Colors.transparent,
-                  tabs: sources.map((e) => TabItem(e,false)).toList()
-              )
+                  tabs: widget.sources.map((source) => TabItem(source,widget.sources.indexOf(source)==SelectedIndex)).toList()
+              ),
+              Expanded(child: TabBarView(
+                children: widget.sources.map((source) => NewsPart(source)).toList()
+
+              ))
 
             ],
 
