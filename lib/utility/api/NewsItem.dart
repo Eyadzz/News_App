@@ -1,4 +1,5 @@
-import 'package:news_application/utility/api/source.dart';
+import 'package:news_application/utility/api/Source.dart';
+import 'package:news_application/utility/api/sources.dart';
 
 class NewsItem {
 
@@ -12,7 +13,7 @@ class NewsItem {
   String content;
 
 	NewsItem.fromJsonMap(Map<String, dynamic> map):
-		source = Source.fromJsonMap(map["source"]),
+		source = Source.fromJson(map["source"]),
 		author = map["author"],
 		title = map["title"],
 		description = map["description"],

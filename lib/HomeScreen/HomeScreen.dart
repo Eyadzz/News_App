@@ -1,18 +1,38 @@
 import 'package:flutter/material.dart';
 import 'package:news_application/HomeScreen/HomeTabs.dart';
+import 'package:news_application/utility/api/ApiManager.dart';
+import 'package:news_application/utility/api/SourceResponse.dart';
 
-class SelectedCategory extends StatefulWidget {
-
+class HomeScreen extends StatefulWidget {
   @override
-  _SelectedCategoryState createState() => _SelectedCategoryState();
+  _HomeScreenState createState() => _HomeScreenState();
 }
 
-class _SelectedCategoryState extends State<SelectedCategory> {
+class _HomeScreenState extends State<HomeScreen> {
+
+  Future<SourceResponse>newsFuture;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    newsFuture=getNewsSources();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Sports')),
-      body:HomeTabs()
+      body:FutureBuilder<SourceResponse>(
+        future: newsFuture,
+        builder: (context,snapShot){
+            if(snapShot.hasData){
+                return HomeTabs(snapShot.data.sources);
+            }else if (snapShot.hasError){
+                return Text("There is an error!");
+            }
+            return Center(child:CircularProgressIndicator());
+
+        }
+      )
 
 
 
