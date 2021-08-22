@@ -14,37 +14,40 @@ class _SideMenuState extends State<SideMenu> {
 
   @override
   Widget build(BuildContext context) {
-    return  Drawer(
+    return Drawer(
       child: Container(
-        color: colorLightTheme,
-        child: Padding(
-          padding: const EdgeInsets.all(15.0),
-          child: Container(
-            padding: EdgeInsets.symmetric(vertical: 90,horizontal: 0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                InkWell(
-                  onTap: (){
-
-                  },
-                  child: Container(
-                    padding: EdgeInsets.symmetric(vertical: 12),
-                    child: Text('Collections'),
-                  ),
-                ),
-                InkWell(
-                  onTap: (){
-                    changeLanguage();
-                  },
-                  child: Container(
-                    padding: EdgeInsets.symmetric(vertical: 12),
-                    child: Text('Settings'),
-                  ),
-                ),
-              ],
+        color: Colors.white,
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            const DrawerHeader(
+              padding: EdgeInsets.fromLTRB(90, 80, 20, 20),
+              decoration: BoxDecoration(
+                color: Color.fromARGB(255, 57, 165, 82),
+              ),
+              child: Text('New App!',style: TextStyle(color: Colors.white,fontSize: 30,),),
             ),
-          ),
+            ListTile(
+              leading: new Icon(Icons.list),
+              title: Text('Categories',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 18,
+                  )),
+              contentPadding: EdgeInsets.fromLTRB(20, 5, 0, 5),
+              onTap: () {},
+            ),
+            ListTile(
+              leading: new Icon(Icons.settings),
+              title: Text('Settings',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 18,
+                  )),
+              contentPadding: EdgeInsets.fromLTRB(20, 5, 0, 5),
+              onTap: () {},
+            ),
+          ],
         ),
       ),
     );
@@ -52,31 +55,33 @@ class _SideMenuState extends State<SideMenu> {
 
   void changeLanguage() {
     Navigator.pop(context);
-    showModalBottomSheet(context: context, builder: (buildContext){
-      return Container(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            InkWell(
-              onTap: (){
-              },
-              child: Container(
-                padding: EdgeInsets.symmetric(vertical: 12),
-                child: Text('English',textAlign: TextAlign.center,),
-              ),
+    showModalBottomSheet(
+        context: context,
+        builder: (buildContext) {
+          return Container(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                InkWell(
+                  onTap: () {},
+                  child: Container(
+                    padding: EdgeInsets.symmetric(vertical: 12),
+                    child: Text(
+                      'English',
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                ),
+                InkWell(
+                  onTap: () {},
+                  child: Container(
+                    padding: EdgeInsets.symmetric(vertical: 12),
+                    child: Text('Arabic', textAlign: TextAlign.center),
+                  ),
+                ),
+              ],
             ),
-            InkWell(
-              onTap: (){
-              },
-              child: Container(
-                padding: EdgeInsets.symmetric(vertical: 12),
-                child: Text('Arabic',textAlign: TextAlign.center),
-              ),
-            ),
-          ],
-        ),
-      );
-    });
+          );
+        });
   }
-
 }
