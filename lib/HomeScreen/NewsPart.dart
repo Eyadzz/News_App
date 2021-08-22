@@ -7,7 +7,7 @@ import 'package:news_application/utility/api/sources.dart';
 
 class NewsPart extends StatefulWidget {
 
-  Sources source;
+  final Sources source;
   NewsPart(this.source);
 
   @override
@@ -15,7 +15,7 @@ class NewsPart extends StatefulWidget {
 }
 
 class _NewsPartState extends State<NewsPart> {
-  Future<NewsResponse>newsFuture;
+  late final Future<NewsResponse>newsFuture;
   @override
   void initState() {
     // TODO: implement initState
@@ -31,7 +31,7 @@ class _NewsPartState extends State<NewsPart> {
         builder: (context,snapShot){
               if(snapShot.hasData){
                 return ListView.builder(itemBuilder:(context,index){
-                  return NewsListItem(snapShot.data.articles[index]);},itemCount: snapShot.data.articles.length,);
+                  return NewsListItem(snapShot.data!.articles[index]);},itemCount: snapShot.data!.articles.length,);
               }else if (snapShot.hasError){
                 return Text('Error Loading News!');
               }

@@ -10,7 +10,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
 
-  Future<SourceResponse>newsFuture;
+  late Future<SourceResponse>newsFuture;
   @override
   void initState() {
     // TODO: implement initState
@@ -25,7 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
         future: newsFuture,
         builder: (context,snapShot){
             if(snapShot.hasData){
-                return HomeTabs(snapShot.data.sources);
+                return HomeTabs(snapShot.data!.sources);
             }else if (snapShot.hasError){
                 return Text("There is an error!");
             }

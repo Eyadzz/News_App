@@ -26,6 +26,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     final Color primaryColor=Color.fromRGBO(57, 165, 82, 1.0);
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         primaryColor: primaryColor,
