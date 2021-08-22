@@ -26,33 +26,22 @@ class _HomeState extends State<Home> {
             icon: customIcon,
             onPressed: () {
               setState(() {
-                if(this.customIcon.icon == Icons.search)
-                {
-                  this.customIcon = Icon(Icons.cancel);
-                  this.customSearchBar = TextField(
-                    textInputAction: TextInputAction.go,
-                    decoration: InputDecoration(
-                      border: InputBorder.none,
-                      filled: true,
-                      fillColor: Colors.white,
-                      enabledBorder:OutlineInputBorder(
-                        borderSide: BorderSide(
-                          width: 0,
-                          style: BorderStyle.none,
-                        ),
-                        borderRadius: new BorderRadius.all(new Radius.circular(10.0)),
-                      ),
-                    ),
-                    style: TextStyle(
+                if ( this.customIcon.icon == Icons.search){
+                  this.customIcon = new Icon(Icons.close);
+                  this.customSearchBar = new TextField(
+                    style: new TextStyle(
                       color: Colors.white,
-                      fontSize: 16.0,
+
                     ),
-                  );
-                }
-                else
-                {
-                  this.customIcon = Icon(Icons.search);
-                  this.customSearchBar = Text("Sports");
+                    decoration: new InputDecoration(
+                        prefixIcon: new Icon(Icons.search,color: Colors.white),
+                        hintText: "Search...",
+                        hintStyle: new TextStyle(color: Colors.white)
+                    ),
+                  );}
+                else {
+                  this.customIcon = new Icon(Icons.search);
+                  this.customSearchBar = new Text("Sports");
                 }
               });
             },
