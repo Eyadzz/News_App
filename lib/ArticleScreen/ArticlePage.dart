@@ -30,19 +30,27 @@ class ArticlePage extends StatelessWidget {
           Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
             NewsTitle(
                 news.urlToImage, news.author, news.title, news.publishedAt),
-            Text(news.content, maxLines: 3),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Text('View Full Article'),
-                IconButton(
-                  onPressed: () {
-                    _launchURL(news.url);
-                  },
-                  icon: const Icon(Icons.arrow_right_outlined),
-                )
-              ],
+            Padding(
+                padding: EdgeInsets.all(16.0),
+                child: Text(news.content, maxLines: 3)
             ),
+
+
+            GestureDetector(
+                onTap: (){
+                  _launchURL(news.url);
+                },
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Text('View Full Article'),
+                    Icon(
+                      Icons.arrow_right_outlined
+                    ),
+                  ],
+                ),
+            )
+
           ]),
         ],
       ),
