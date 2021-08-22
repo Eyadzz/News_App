@@ -10,8 +10,8 @@ class ArticlePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(news.title),
-        leading: new Container(),
+        title: Text("SPORTS"),
+        centerTitle: true,
         shape: ContinuousRectangleBorder(
           borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(80),
@@ -30,25 +30,30 @@ class ArticlePage extends StatelessWidget {
           Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
             NewsTitle(
                 news.urlToImage, news.author, news.title, news.publishedAt),
-            Padding(
-                padding: EdgeInsets.all(16.0),
-                child: Text(news.content, maxLines: 3)
+            Expanded(
+              child: Padding(
+                  padding: EdgeInsets.all(16.0),
+                  child: Text(news.content)
+              ),
             ),
 
 
-            GestureDetector(
-                onTap: (){
-                  _launchURL(news.url);
-                },
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Text('View Full Article'),
-                    Icon(
-                      Icons.arrow_right_outlined
-                    ),
-                  ],
-                ),
+            Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: GestureDetector(
+                  onTap: (){
+                    _launchURL(news.url);
+                  },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Text('View Full Article'),
+                      Icon(
+                        Icons.arrow_right_outlined
+                      ),
+                    ],
+                  ),
+              ),
             )
 
           ]),
