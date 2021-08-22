@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:news_application/HomeScreen/HomeTabs.dart';
 import 'package:news_application/utility/api/ApiManager.dart';
@@ -21,23 +22,45 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Sports')),
-      body:FutureBuilder<SourceResponse>(
-        future: newsFuture,
-        builder: (context,snapShot){
+      body: Container(
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("assets/images/pattern.png"),
+                fit: BoxFit.cover,
+              )
+          ),
+        child:FutureBuilder<SourceResponse>(
+          future: newsFuture,
+          builder: (context,snapShot){
             if(snapShot.hasData){
                 return HomeTabs(snapShot.data.sources);
             }else if (snapShot.hasError){
-                return Text("There is an error!");
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                    Text("Error Loading Data! Check Your Internet!"),
+                      FloatingActionButton(
+                        onPressed: _refreshData,
+                        child: Container(
+                            padding:EdgeInsets.only(top: 8),
+                            child: new Icon(Icons.refresh)),
+                      )
+            ],
+                );
             }
             return Center(child:CircularProgressIndicator());
-
-        }
+          }
+       )
       )
-
 
 
     );
 
 
+  }
+  Future _refreshData() async {
+    await Future.delayed(Duration(seconds: 1));
+    newsFuture=getNewsSources();
+    setState(() {});
   }
 }
