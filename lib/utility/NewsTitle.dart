@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:intl/intl.dart';
+import 'package:timeago/timeago.dart' as timeago;
 
 class NewsTitle extends StatelessWidget {
 
@@ -12,6 +13,7 @@ class NewsTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    DateTime tempDate = new DateFormat("yyyy-MM-ddThh:mm:ss").parse(publishedAt);
     return Container(
       padding: EdgeInsets.all(8),
       child: Column(
@@ -37,7 +39,7 @@ class NewsTitle extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                   color: Color.fromRGBO(66, 80, 92, 1.0)),
               textAlign: TextAlign.start),
-          Text(publishedAt,
+          Text(timeago.format(tempDate),
               style: TextStyle(
                   fontSize: 12,
                   fontFamily: 'Poppins',
