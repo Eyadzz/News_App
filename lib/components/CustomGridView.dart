@@ -28,10 +28,11 @@ class _CustomGridViewState extends State<CustomGridView> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.fromLTRB(20, 30, 20,0),
       child: GridView.count(
           crossAxisCount: elementsInRow,
-          crossAxisSpacing: 5.0,
-          mainAxisSpacing: 5.0,
+          crossAxisSpacing: 10.0,
+          mainAxisSpacing: 20.0,
           children: List.generate(images.length, (index){
             return Container(
               child: InkWell(
