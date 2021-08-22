@@ -11,6 +11,8 @@ final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
 class _HomeState extends State<Home> {
   PageController _myPage = PageController(initialPage: 0);
+  Icon customIcon = Icon(Icons.search);
+  Widget customSearchBar = Text("Sports");
 
   @override
   Widget build(BuildContext context) {
@@ -19,13 +21,45 @@ class _HomeState extends State<Home> {
       drawer:SideMenu(),
       extendBodyBehindAppBar: true,
       appBar: AppBar(
+        actions: <Widget>[
+          IconButton(
+            icon: customIcon,
+            onPressed: () {
+              setState(() {
+                if(this.customIcon.icon == Icons.search)
+                {
+                  this.customIcon = Icon(Icons.cancel);
+                  this.customSearchBar = TextField(
+                    textInputAction: TextInputAction.go,
+                    decoration: InputDecoration(
+                      border: InputBorder.none,
+                      filled: true,
+                      fillColor: Colors.white,
+                      enabledBorder:OutlineInputBorder(
+                        borderSide: BorderSide(
+                          width: 0,
+                          style: BorderStyle.none,
+                        ),
+                        borderRadius: new BorderRadius.all(new Radius.circular(10.0)),
+                      ),
+                    ),
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16.0,
+                    ),
+                  );
+                }
+                else
+                {
+                  this.customIcon = Icon(Icons.search);
+                  this.customSearchBar = Text("Sports");
+                }
+              });
+            },
+          ),
+        ],
         iconTheme: IconThemeData(color: Colors.white),
-        title: Text('Sports', style: TextStyle(
-          color:Colors.white,
-          fontSize: 30,
-          fontWeight: FontWeight.bold,
-        ),
-        ),
+        title: customSearchBar,
         centerTitle: true,
         elevation: 0,
         backgroundColor: Color.fromARGB(255, 57, 165, 82),
