@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:news_application/Components/myAppBar.dart';
 
 import '../Home.dart';
 
@@ -10,10 +11,9 @@ class SettingsTab extends StatefulWidget {
 }
 
 class _SettingsTabState extends State<SettingsTab> {
-  String? selectedItem = "English";
   var item;
   final List<String> Items = ["English","Arabic"];
-
+  PageController _myPage = PageController(initialPage: 2);
 
   @override
   void initState() {
@@ -23,6 +23,7 @@ class _SettingsTabState extends State<SettingsTab> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: CustomAppBar(),
         body: Stack(
           //alignment: AlignmentDirectional.center,
           children: [
