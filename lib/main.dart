@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'utility/ThemeData.dart';
+import 'package:news_application/tabs/SettingsTab.dart';
 import 'Home.dart';
 
 
@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         Home.routeName: (context) => Home(),
+        SettingsTab.routeName: (context) => SettingsTab(),
       },
       initialRoute: Home.routeName,
     );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_application/Components/SideMenu.dart';
+import 'package:news_application/tabs/SettingsTab.dart';
 import 'Components/SideMenu.dart';
 
 class Home extends StatefulWidget {
@@ -79,7 +80,9 @@ class _HomeState extends State<Home> {
       body: PageView(
         controller: _myPage,
         onPageChanged: (int) {},
-        children: [],
+        children: [
+          SettingsTab(),
+        ],
       ),
     );
   }

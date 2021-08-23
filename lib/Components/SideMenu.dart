@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:news_application/tabs/SettingsTab.dart';
 
 class SideMenu extends StatefulWidget {
   const SideMenu({Key? key}) : super(key: key);
@@ -35,7 +36,8 @@ class _SideMenuState extends State<SideMenu> {
                     fontSize: 18,
                   )),
               contentPadding: EdgeInsets.fromLTRB(20, 5, 0, 5),
-              onTap: () {},
+              onTap: () {
+              },
             ),
             ListTile(
               leading: new Icon(Icons.settings),
@@ -45,43 +47,16 @@ class _SideMenuState extends State<SideMenu> {
                     fontSize: 18,
                   )),
               contentPadding: EdgeInsets.fromLTRB(20, 5, 0, 5),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SettingsTab()),
+                );
+              },
             ),
           ],
         ),
       ),
     );
-  }
-
-  void changeLanguage() {
-    Navigator.pop(context);
-    showModalBottomSheet(
-        context: context,
-        builder: (buildContext) {
-          return Container(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                InkWell(
-                  onTap: () {},
-                  child: Container(
-                    padding: EdgeInsets.symmetric(vertical: 12),
-                    child: Text(
-                      'English',
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                ),
-                InkWell(
-                  onTap: () {},
-                  child: Container(
-                    padding: EdgeInsets.symmetric(vertical: 12),
-                    child: Text('Arabic', textAlign: TextAlign.center),
-                  ),
-                ),
-              ],
-            ),
-          );
-        });
   }
 }
