@@ -5,6 +5,7 @@ import 'Components/myAppBar.dart';
 
 class Home extends StatefulWidget {
   static const routeName = 'home';
+
   @override
   _HomeState createState() => _HomeState();
 }
@@ -12,8 +13,6 @@ class Home extends StatefulWidget {
 final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
 class _HomeState extends State<Home> {
-  Icon customIcon = Icon(Icons.search);
-  Widget customSearchBar = Text("Sports");
   SideMenu customized = SideMenu();
 
   @override
@@ -23,6 +22,17 @@ class _HomeState extends State<Home> {
       drawer: customized,
       extendBodyBehindAppBar: true,
       appBar: CustomAppBar(),
+      body: Column(
+        children: [
+          Text("Pick your category \n of interest",
+            style: TextStyle(
+              fontFamily: "Pop_Bold",
+              fontSize: 22,
+              color: Colors.black,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

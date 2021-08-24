@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_application/HomeScreen/NewsPart.dart';
 import 'package:news_application/HomeScreen/TabItem.dart';
-import 'package:news_application/utility/api/sources.dart';
-
+import 'package:news_application/utility/api/Sources.dart';
 
 class HomeTabs extends StatefulWidget {
 
@@ -27,7 +26,6 @@ class _HomeTabsState extends State<HomeTabs> {
                   setState(() {
                     SelectedIndex=index;
                   });
-
                 },
                   isScrollable: true,
                   indicatorColor: Colors.transparent,
@@ -35,13 +33,9 @@ class _HomeTabsState extends State<HomeTabs> {
               ),
               Expanded(child: TabBarView(
                 children: widget.sources.map((source) => NewsPart(source)).toList()
-
-              ))
-
-            ],
-
-
-
+              )
+            )
+          ],
     ),
         ));
   }

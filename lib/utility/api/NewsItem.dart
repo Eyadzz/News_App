@@ -1,17 +1,15 @@
-import 'package:news_application/utility/api/Source.dart';
-
+import 'Source.dart';
 
 class NewsItem {
 
-  late Source source;
-	late Object author;
-	late String title;
-  late String description;
-	late String url;
-  late String urlToImage;
-	late String publishedAt;
-	late String content;
-	NewsItem({required this.description,required this.url,required this.content,required this.urlToImage});
+  Source source;
+  Object author;
+  String title;
+  String description;
+  String url;
+  String urlToImage;
+  String publishedAt;
+  String content;
 
 	NewsItem.fromJsonMap(Map<String, dynamic> map):
 		source = Source.fromJson(map["source"]),

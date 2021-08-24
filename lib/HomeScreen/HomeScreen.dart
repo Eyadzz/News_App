@@ -6,6 +6,8 @@ import 'package:news_application/utility/api/SourceResponse.dart';
 class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
+  static final routeName = "News";
+
 }
 
 class _HomeScreenState extends State<HomeScreen> {

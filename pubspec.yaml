@@ -88,3 +88,6 @@ flutter:
     - family: Poppins
       fonts:
         - asset: assets/fonts/Poppins-Medium.ttf
+    - family: Montserrat
+      fonts:
+        - asset: assets/fonts/Montserrat-Regular.ttf

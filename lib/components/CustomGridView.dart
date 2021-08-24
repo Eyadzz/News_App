@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 class CustomGridView extends StatefulWidget {
-  const CustomGridView({Key key}) : super(key: key);
 
   @override
   _CustomGridViewState createState() => _CustomGridViewState();

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:news_application/HomeScreen/NewsListItem.dart';
 import 'package:news_application/utility/api/ApiManager.dart';
 import 'package:news_application/utility/api/NewsResponse.dart';
-import 'package:news_application/utility/api/sources.dart';
+import 'package:news_application/utility/api/Sources.dart';
 
 
 class NewsPart extends StatefulWidget {

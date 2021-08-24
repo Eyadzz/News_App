@@ -25,14 +25,13 @@ class ArticlePage extends StatelessWidget {
             decoration: new BoxDecoration(
               image: new DecorationImage(image: new AssetImage('assets/images/pattern.png'),fit: BoxFit.fill,),
             ),
-
           ),
           Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
             NewsTitle(
                 news.urlToImage, news.author, news.title, news.publishedAt),
             Expanded(
               child: Padding(
-                  padding: EdgeInsets.all(16.0),
+                  padding: EdgeInsets.all(10.0),
                   child: Text(news.content)
               ),
             ),

@@ -15,12 +15,12 @@ class NewsTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     DateTime tempDate = new DateFormat("yyyy-MM-ddThh:mm:ss").parse(publishedAt);
     return Container(
-      padding: EdgeInsets.all(8),
+      padding: EdgeInsets.all(10),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Container(
-            padding: EdgeInsets.only(bottom: 6),
+            padding: EdgeInsets.only(bottom: 10),
             child: ClipRRect(
                 borderRadius: BorderRadius.circular(12),
                 child: Image.network(urlToImage,
@@ -34,15 +34,14 @@ class NewsTitle extends StatelessWidget {
               textAlign: TextAlign.start),
           Text(title,
               style: TextStyle(
-                  fontSize: 16,
+                  fontSize: 14,
                   fontFamily: 'Poppins',
-                  fontWeight: FontWeight.bold,
                   color: Color.fromRGBO(66, 80, 92, 1.0)),
               textAlign: TextAlign.start),
           Text(timeago.format(tempDate),
               style: TextStyle(
-                  fontSize: 12,
-                  fontFamily: 'Poppins',
+                  fontSize: 13,
+                  fontFamily: 'Montserrat',
                   color: Color.fromRGBO(163, 163, 163, 1.0)),
               textAlign: TextAlign.end)
         ],

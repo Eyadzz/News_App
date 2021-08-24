@@ -7,7 +7,7 @@ class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
   @override
   final Size preferredSize; // default is 56.0
 
-  CustomAppBar({Key? key}) : preferredSize = Size.fromHeight(kToolbarHeight), super(key: key);
+  CustomAppBar({Key? key}) : preferredSize = Size.fromHeight(60.0),super(key: key);
 
   @override
   _CustomAppBarState createState() => _CustomAppBarState();
@@ -15,12 +15,11 @@ class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
 
 class _CustomAppBarState extends State<CustomAppBar>{
   bool isSearching = false;
-  Widget appBarTitle = Text("News App", style: TextStyle(fontSize: 22, fontFamily: "Exo", fontWeight: FontWeight.w600),);
   @override
   Widget build(BuildContext context) {
     return AppBar(
       iconTheme: IconThemeData(color: Colors.white),
-      title: isSearching?  null : appBarTitle,
+      title: isSearching?  null : Text("News App", style: TextStyle(fontSize: 22, fontFamily: "Exo", fontWeight: FontWeight.w600)),
       centerTitle: isSearching? false : true,
       leading: isSearching? Container() : Builder(
         builder: (context) => IconButton(
