@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:news_application/HomeScreen/HomeTabs.dart';
+import 'package:news_application/tabs/HomeScreen/HomeTabs.dart';
 import 'package:news_application/components/SideMenu.dart';
 import 'package:news_application/components/myAppBar.dart';
 import 'package:news_application/utility/api/ApiManager.dart';
@@ -32,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
         key: scaffoldKey,
         drawer: customized,
-        appBar: CustomAppBar(searchval: title,),
+        appBar: CustomAppBar(title: title,),
         body: Container(
             decoration: BoxDecoration(
                 image: DecorationImage(

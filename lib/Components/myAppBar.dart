@@ -7,8 +7,8 @@ class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
   @override
   final Size preferredSize; // default is 56.0
 
-  CustomAppBar({Key? key}) : preferredSize = Size.fromHeight(60.0),super(key: key);
-
+  CustomAppBar({Key? key, this.title}) : preferredSize = Size.fromHeight(60.0),super(key: key);
+  var title;
   @override
   _CustomAppBarState createState() => _CustomAppBarState();
 }
@@ -19,7 +19,7 @@ class _CustomAppBarState extends State<CustomAppBar>{
   Widget build(BuildContext context) {
     return AppBar(
       iconTheme: IconThemeData(color: Colors.white),
-      title: isSearching?  null : Text("News App", style: TextStyle(fontSize: 22, fontFamily: "Exo", fontWeight: FontWeight.w600)),
+      title: isSearching?  null : Text(widget.title??'News App', style: TextStyle(fontSize: 22, fontFamily: "Exo", fontWeight: FontWeight.w600)),
       centerTitle: isSearching? false : true,
       leading: isSearching? Container() : Builder(
         builder: (context) => IconButton(
@@ -41,6 +41,11 @@ class _CustomAppBarState extends State<CustomAppBar>{
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextField(
+                onSubmitted: (txt){
+                  setState(() {
+                    widget.title = txt;
+                  });
+                },
                 style: TextStyle(
                   color: Colors.black,
                 ),

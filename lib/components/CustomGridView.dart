@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_application/Home.dart';
-import 'package:news_application/HomeScreen/HomeScreen.dart';
+import 'package:news_application/tabs/HomeScreen/HomeScreen.dart';
 class CustomGridView extends StatefulWidget {
 
   @override

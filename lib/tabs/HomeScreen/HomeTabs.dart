@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:news_application/HomeScreen/NewsPart.dart';
-import 'package:news_application/HomeScreen/TabItem.dart';
+import 'package:news_application/tabs/HomeScreen/NewsPart.dart';
+import 'package:news_application/tabs/HomeScreen/TabItem.dart';
 import 'package:news_application/utility/api/Sources.dart';
 
 class HomeTabs extends StatefulWidget {

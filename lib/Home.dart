@@ -4,6 +4,7 @@ import 'package:news_application/Components/SideMenu.dart';
 import 'package:news_application/components/CustomGridView.dart';
 import 'Components/SideMenu.dart';
 import 'Components/myAppBar.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Home extends StatefulWidget {
   static const routeName = 'home';
@@ -35,7 +36,7 @@ class _HomeState extends State<Home> {
           children: [
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 30),
-              child: Text("Pick your category \n of interest",
+              child: Text("Pick your category\nof interest",
                 style: TextStyle(
                   fontFamily: "Pop_Bold",
                   fontSize: 22,
