@@ -26,27 +26,30 @@ class _SideMenuState extends State<SideMenu> {
               decoration: BoxDecoration(
                 color: Color.fromARGB(255, 57, 165, 82),
               ),
-              child: Text('New App!',style: TextStyle(color: Colors.white,fontSize: 30,),),
+              child: Text('New App!',style: TextStyle(color: Colors.white,fontSize: 24,
+                fontFamily: "Pop_Bold",),),
             ),
             ListTile(
-              leading: new Icon(Icons.list),
+              leading: new Icon(Icons.view_list_rounded, size: 30, color: Colors.black,),
               title: Text('Categories',
                   style: TextStyle(
                     color: Colors.black,
-                    fontSize: 18,
+                    fontSize: 24,
+                    fontFamily: "Pop_Bold",
                   )),
-              contentPadding: EdgeInsets.fromLTRB(20, 5, 0, 5),
+              contentPadding: EdgeInsets.fromLTRB(10, 0, 0, 0),
               onTap: () {
               },
             ),
             ListTile(
-              leading: new Icon(Icons.settings),
+              leading: new Icon(Icons.settings, size: 30,color: Colors.black,),
               title: Text('Settings',
                   style: TextStyle(
                     color: Colors.black,
-                    fontSize: 18,
+                    fontSize: 24,
+                    fontFamily: "Pop_Bold",
                   )),
-              contentPadding: EdgeInsets.fromLTRB(20, 5, 0, 5),
+              contentPadding: EdgeInsets.fromLTRB(10, 0, 0, 0),
               onTap: () {
                 Navigator.push(
                   context,

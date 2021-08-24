@@ -11,8 +11,9 @@ class SettingsTab extends StatefulWidget {
 }
 
 class _SettingsTabState extends State<SettingsTab> {
-  var item;
+
   final List<String> Items = ["English","Arabic"];
+  var item;
   PageController _myPage = PageController(initialPage: 2);
 
   @override
@@ -38,11 +39,12 @@ class _SettingsTabState extends State<SettingsTab> {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const DrawerHeader(
-                 padding: EdgeInsets.fromLTRB(0, 120, 0, 0),
-                  child: Text('Language',style: TextStyle(color: Colors.black,fontSize: 20,fontWeight: FontWeight.bold),),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(29, 50, 0, 30),
+                  child: Text('Language',style: TextStyle(color: Colors.black,fontSize: 14,fontFamily: "Pop_Bold"),),
                 ),
                 DropdownButton<String>(
+                  style: TextStyle(color: Colors.black),
                   iconSize: 15.0,
                   value: item,
                   isExpanded: true,

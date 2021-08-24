@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
@@ -13,56 +14,20 @@ class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
 }
 
 class _CustomAppBarState extends State<CustomAppBar>{
-  Icon customIcon = Icon(Icons.search);
-  Widget customSearchBar = Text("Sports");
+  bool isSearching = false;
+  Widget appBarTitle = Text("News App", style: TextStyle(fontSize: 22, fontFamily: "Exo", fontWeight: FontWeight.w600),);
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      actions: <Widget>[
-        IconButton(
-          icon: customIcon,
-          onPressed: () {
-            setState(() {
-              if (this.customIcon.icon == Icons.search) {
-                this.customIcon = new Icon(Icons.close);
-                this.customSearchBar = new TextField(
-                  style: new TextStyle(
-                    height: 0.1,
-                    color: Colors.black,
-                  ),
-                  decoration: new InputDecoration(
-                    prefixIcon: new Icon(Icons.close, color: Colors.grey),
-                    suffixIcon: new Icon(Icons.search, color: Colors.grey),
-                    fillColor: Colors.white,
-                    filled: true,
-                    hintText: "Search Article",
-                    hintStyle: new TextStyle(color: Colors.grey,fontWeight: FontWeight.w100,),
-                    contentPadding: const EdgeInsets.only(
-                        left: 14.0, bottom: 4.0, top: 30.0),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide.none,
-                      borderRadius: new BorderRadius.circular(25.7),
-                    ),
-                    enabledBorder: UnderlineInputBorder(
-                      borderSide: new BorderSide(color: Colors.white),
-                      borderRadius: new BorderRadius.circular(25.7),
-                    ),
-                    labelStyle: TextStyle(
-                      color: Colors.black,
-                    ),
-                  ),
-                );
-              } else {
-                this.customIcon = new Icon(Icons.search);
-                this.customSearchBar = new Text("Sports");
-              }
-            });
-          },
-        ),
-      ],
       iconTheme: IconThemeData(color: Colors.white),
-      title: customSearchBar,
-      centerTitle: true,
+      title: isSearching?  null : appBarTitle,
+      centerTitle: isSearching? false : true,
+      leading: isSearching? Container() : Builder(
+        builder: (context) => IconButton(
+          icon: Icon(Icons.menu_rounded, size: 30),
+          onPressed: () => Scaffold.of(context).openDrawer(),
+        ),
+      ),
       elevation: 0,
       backgroundColor: Color.fromARGB(255, 57, 165, 82),
       shape: ContinuousRectangleBorder(
@@ -70,6 +35,53 @@ class _CustomAppBarState extends State<CustomAppBar>{
             bottomLeft: Radius.circular(80),
             bottomRight: Radius.circular(80),
           )),
+      actions: <Widget>[
+        InkWell(
+          child: isSearching ? Container(
+            width: 390,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextField(
+                style: TextStyle(
+                  color: Colors.black,
+                ),
+                decoration:  InputDecoration(
+                  prefixIcon: IconButton(icon: Icon(Icons.close, color: Colors.grey), onPressed: (){setState(() {
+                    isSearching=false;
+                  });},),
+                  suffixIcon: new Icon(Icons.search, color: Colors.grey),
+                  fillColor: Colors.white,
+                  filled: true,
+                  hintText: "Search Article",
+                  hintStyle:  TextStyle(color: Colors.grey,fontWeight: FontWeight.w100,height: 2),
+                  contentPadding: const EdgeInsets.only(
+                      left: 14.0, bottom: 4.0, top: 30.0),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide.none,
+                    borderRadius:  BorderRadius.circular(25.7),
+                  ),
+                  enabledBorder: UnderlineInputBorder(
+                    borderSide:  BorderSide(color: Colors.white),
+                    borderRadius:  BorderRadius.circular(25.7),
+                  ),
+                  labelStyle: TextStyle(
+                    color: Colors.black,
+                    height: 2,
+                  ),
+                ),
+              ),
+            ),
+          ) : Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Icon(Icons.search_rounded, size: 30,),
+          ),
+          onTap: () {
+            setState(() {
+              isSearching = true;
+            });
+          },
+        ),
+      ],
     );
   }
 }
