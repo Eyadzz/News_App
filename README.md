@@ -1,22 +1,18 @@
 
-![Screenshot_1629834252](https://user-images.githubusercontent.com/52964973/130681235-d766e6a4-f6f6-4972-8bb8-90892686c729.png)
-![Screenshot_1629834318](https://user-images.githubusercontent.com/52964973/130681218-7be49d36-2a7d-45db-ad99-00d03a8b15c5.png)
-![Screenshot_1629834279](https://user-images.githubusercontent.com/52964973/130681245-f5c85959-b2df-4151-add1-23710661aea5.png)
-![Screenshot_1629834273](https://user-images.githubusercontent.com/52964973/130681252-77f0c141-7c7a-432c-b6d5-bb72e51c803e.png)
-![Screenshot_1629834286](https://user-images.githubusercontent.com/52964973/130681206-f50dcdfb-6b01-4c96-8642-b7675ed864d0.png)
-# news_application
+# News Application
 
-A new Flutter project.
 
 ## Getting Started
 
 This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+## Screenshots
+![0](https://user-images.githubusercontent.com/66397595/130685361-fbbbb076-bb40-4c41-a701-e8ecedc97e8e.png)
+![1](https://user-images.githubusercontent.com/66397595/130685369-c697799e-04e4-4953-abbd-c7574e584c5b.png)
+![2](https://user-images.githubusercontent.com/66397595/130685378-e91687cc-5f1a-4d49-abbe-02a0a4d99801.png)
+![4](https://user-images.githubusercontent.com/66397595/130685382-4c7f5c42-4b23-4f7a-b0c6-a0c40c87375e.png)
+![5](https://user-images.githubusercontent.com/66397595/130685400-4643506a-ce77-42b0-a245-b49a42752103.png)
+![6](https://user-images.githubusercontent.com/66397595/130685412-ea6edf65-ad1a-469e-86f0-b6ae3b22d216.png)
+![7](https://user-images.githubusercontent.com/66397595/130685418-3f44a52f-3b76-4eb7-8903-5dbea8d3cbdf.png)
+![8](https://user-images.githubusercontent.com/66397595/130685426-62303e3e-8d63-4edc-aa73-c46ef5caeab5.png)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
