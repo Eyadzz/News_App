@@ -23,7 +23,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  intl: ^0.17.0
   http: ^0.13.3
+  url_launcher: ^6.0.9
+  timeago: ^3.1.0
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -82,3 +85,6 @@ flutter:
     - family: Pop_Bold
       fonts:
         - asset: assets/fonts/Poppins-Bold.ttf
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Medium.ttf
