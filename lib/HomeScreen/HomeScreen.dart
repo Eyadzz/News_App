@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_application/HomeScreen/HomeTabs.dart';
+import 'package:news_application/components/SideMenu.dart';
+import 'package:news_application/components/myAppBar.dart';
 import 'package:news_application/utility/api/ApiManager.dart';
 import 'package:news_application/utility/api/SourceResponse.dart';
 
@@ -7,22 +9,29 @@ class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
   static final routeName = "News";
+  HomeScreen(this.category);
+  var category;
 
 }
 
 class _HomeScreenState extends State<HomeScreen> {
 
+
+  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   late Future<SourceResponse>newsFuture;
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    newsFuture=getNewsSources();
+    newsFuture = getNewsSources(widget.category);
   }
   @override
   Widget build(BuildContext context) {
+    SideMenu customized = SideMenu();
     return Scaffold(
-        appBar: AppBar(title: Text('Sports')),
+        key: scaffoldKey,
+        drawer: customized,
+        appBar: CustomAppBar(),
         body: Container(
             decoration: BoxDecoration(
                 image: DecorationImage(
@@ -53,15 +62,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 }
             )
         )
-
-
     );
-
 
   }
   Future _refreshData() async {
     await Future.delayed(Duration(seconds: 1));
-    newsFuture=getNewsSources();
+    newsFuture = getNewsSources(widget.category);
     setState(() {});
   }
 }

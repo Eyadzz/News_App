@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:news_application/Home.dart';
+import 'package:news_application/HomeScreen/HomeScreen.dart';
 class CustomGridView extends StatefulWidget {
 
   @override
@@ -14,9 +16,9 @@ class _CustomGridViewState extends State<CustomGridView> {
     "assets/images/enviroment.png",
     "assets/images/science.png",
   ];
-  final routsName = [
+  final category = [
       "sports",
-      "politics",
+      "general",
       "health",
       "business",
       "environment",
@@ -27,17 +29,15 @@ class _CustomGridViewState extends State<CustomGridView> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.fromLTRB(20, 30, 20,0),
+      padding: EdgeInsets.fromLTRB(20, 0, 20,0),
       child: GridView.count(
           crossAxisCount: elementsInRow,
-          crossAxisSpacing: 10.0,
-          mainAxisSpacing: 20.0,
           children: List.generate(images.length, (index){
             return Container(
               child: InkWell(
-                child: Image.asset(images[index]),
+                child: Image.asset(images[index],scale: 1.1,),
                 onTap: (){
-                  Navigator.of(context).pushReplacementNamed(routsName[index]);
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>HomeScreen(category[index])));
                 },
               ),
             );

@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:news_application/Components/SideMenu.dart';
+import 'package:news_application/components/CustomGridView.dart';
 import 'Components/SideMenu.dart';
 import 'Components/myAppBar.dart';
 
@@ -20,18 +22,30 @@ class _HomeState extends State<Home> {
     return Scaffold(
       key: scaffoldKey,
       drawer: customized,
-      extendBodyBehindAppBar: true,
       appBar: CustomAppBar(),
-      body: Column(
-        children: [
-          Text("Pick your category \n of interest",
-            style: TextStyle(
-              fontFamily: "Pop_Bold",
-              fontSize: 22,
-              color: Colors.black,
+      body: Container(
+        decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/images/pattern.png"),
+              fit: BoxFit.cover,
+            )
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 30),
+              child: Text("Pick your category \n of interest",
+                style: TextStyle(
+                  fontFamily: "Pop_Bold",
+                  fontSize: 22,
+                  color: Colors.black,
+                ),
+              ),
             ),
-          ),
-        ],
+            Expanded(child: CustomGridView()),
+          ],
+        ),
       ),
     );
   }

@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         primaryColor: primaryColor,
       ),
       routes: {
-        HomeScreen.routeName: (context) =>HomeScreen(),
+        HomeScreen.routeName: (context) =>HomeScreen('general'),
         Home.routeName: (context) => Home(),
         SettingsTab.routeName: (context) => SettingsTab(),
       },
