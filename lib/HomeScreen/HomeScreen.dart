@@ -27,11 +27,12 @@ class _HomeScreenState extends State<HomeScreen> {
   }
   @override
   Widget build(BuildContext context) {
+    var title = widget.category == 'general' ? 'Politics' : widget.category;
     SideMenu customized = SideMenu();
     return Scaffold(
         key: scaffoldKey,
         drawer: customized,
-        appBar: CustomAppBar(),
+        appBar: CustomAppBar(searchval: title,),
         body: Container(
             decoration: BoxDecoration(
                 image: DecorationImage(

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:news_application/tabs/SettingsTab.dart';
+import '../Home.dart';
 
 class SideMenu extends StatefulWidget {
   const SideMenu({Key? key}) : super(key: key);
@@ -39,6 +40,10 @@ class _SideMenuState extends State<SideMenu> {
                   )),
               contentPadding: EdgeInsets.fromLTRB(10, 0, 0, 0),
               onTap: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder:  (context) => Home()),
+                );
               },
             ),
             ListTile(
@@ -51,7 +56,7 @@ class _SideMenuState extends State<SideMenu> {
                   )),
               contentPadding: EdgeInsets.fromLTRB(10, 0, 0, 0),
               onTap: () {
-                Navigator.push(
+                Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(builder: (context) => SettingsTab()),
                 );

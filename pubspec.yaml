@@ -27,6 +27,7 @@ dependencies:
   http: ^0.13.3
   url_launcher: ^6.0.9
   timeago: ^3.1.0
+  flutter_native_splash: ^1.2.1
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -91,3 +92,9 @@ flutter:
     - family: Montserrat
       fonts:
         - asset: assets/fonts/Montserrat-Regular.ttf
+
+flutter_native_splash:
+  background_image: "assets/images/splash.png"
+  andriod: true
+  ios: true
+  andriod_gravity: fill
