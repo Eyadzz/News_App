@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_application/Home.dart';
-import 'package:news_application/components/Category.dart';
+import 'package:news_application/components/CategoryItem.dart';
 import 'package:news_application/components/CategoryData.dart';
 import 'package:news_application/tabs/HomeScreen/HomeScreen.dart';
 class CustomGridView extends StatefulWidget {

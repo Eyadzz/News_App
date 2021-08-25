@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:news_application/Components/SideMenu.dart';
-import 'package:news_application/components/Category.dart';
+import 'package:news_application/components/CategoryItem.dart';
 import 'package:news_application/components/CustomGridView.dart';
 import 'Components/SideMenu.dart';
 import 'Components/myAppBar.dart';
