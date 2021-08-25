@@ -28,10 +28,11 @@ class _HomeScreenState extends State<HomeScreen> {
     // TODO: implement initState
     super.initState();
     //provider = Provider.of<AppConfigProvider>(context);
-    newsFuture = getNewsSources(widget.category.toLowerCase());
   }
   @override
   Widget build(BuildContext context) {
+    provider = Provider.of<AppConfigProvider>(context);
+    newsFuture = getNewsSources(widget.category.toLowerCase(), provider.currentLocale);
     var title = widget.category == 'general' ? 'Politics' : widget.category;
     SideMenu customized = SideMenu();
     return Scaffold(
@@ -73,7 +74,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
   Future _refreshData() async {
     await Future.delayed(Duration(seconds: 1));
-    newsFuture = getNewsSources(widget.category);
+    newsFuture = getNewsSources(widget.category,provider.currentLocale);
     setState(() {});
   }
 }

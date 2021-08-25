@@ -27,12 +27,13 @@ class _NewsPartState extends State<NewsPart> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    //provider =  Provider.of<AppConfigProvider>(context);
-    newsFuture=getNewsArticles(widget.source);
+
 
   }
   @override
   Widget build(BuildContext context) {
+    provider =  Provider.of<AppConfigProvider>(context);
+    newsFuture=getNewsArticles(widget.source,provider.currentLocale);
     return RefreshIndicator(
         onRefresh: _refreshData,
         child: Container(
@@ -59,7 +60,7 @@ class _NewsPartState extends State<NewsPart> {
   Future _refreshData() async {
     await Future.delayed(Duration(seconds: 1));
 
-    newsFuture=getNewsArticles(widget.source);
+    newsFuture=getNewsArticles(widget.source,provider.currentLocale);
     setState(() {});
   }
 

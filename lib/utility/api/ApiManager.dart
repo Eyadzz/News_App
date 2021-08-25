@@ -4,8 +4,8 @@ import 'package:news_application/utility/api/NewsResponse.dart';
 import 'package:news_application/utility/api/SourceResponse.dart';
 import 'package:news_application/utility/api/Sources.dart';
 
-Future<SourceResponse> getNewsSources(String category)async{
-  final uri = Uri.https("newsapi.org", "/v2/top-headlines/sources", {'apiKey':'7f8d46f9393d4845b80565e3cec44ea6', 'category':category});
+Future<SourceResponse> getNewsSources(String category, String lang)async{
+  final uri = Uri.https("newsapi.org", "/v2/top-headlines/sources", {'apiKey':'7f8d46f9393d4845b80565e3cec44ea6', 'category':category, 'language':lang});
   final response = await http.get(uri);
   print(response.body);
   if(response.statusCode == 200)
@@ -18,9 +18,9 @@ Future<SourceResponse> getNewsSources(String category)async{
   }
 }
 
-Future <NewsResponse> getNewsArticles(Sources source) async
+Future <NewsResponse> getNewsArticles(Sources source, String lang) async
 {
-  final uri = Uri.https("newsapi.org", "/v2/everything", {'apiKey':'7f8d46f9393d4845b80565e3cec44ea6', 'sources':source.id, 'sortBy':"publishedAt"});
+  final uri = Uri.https("newsapi.org", "/v2/everything", {'apiKey':'7f8d46f9393d4845b80565e3cec44ea6', 'sources':source.id, 'sortBy':"publishedAt",'language':lang});
 
   final response = await http.get(uri);
 
