@@ -23,7 +23,7 @@ class NewsTitle extends StatelessWidget {
             padding: EdgeInsets.only(bottom: 10),
             child: ClipRRect(
                 borderRadius: BorderRadius.circular(12),
-                child: Image.network(urlToImage=='null'?'https://images-na.ssl-images-amazon.com/images/I/41bLP6NzvKL.jpg': urlToImage,
+                child: Image.network(urlToImage=='null'?'https://howfix.net/wp-content/uploads/2018/02/sIaRmaFSMfrw8QJIBAa8mA-article.png': urlToImage,
                     height: 240, width: double.infinity, fit: BoxFit.cover)),
           ),
           Text(author.toString(),

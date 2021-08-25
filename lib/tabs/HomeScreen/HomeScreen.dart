@@ -10,7 +10,7 @@ class HomeScreen extends StatefulWidget {
   _HomeScreenState createState() => _HomeScreenState();
   static final routeName = "News";
   HomeScreen(this.category);
-  var category;
+  String category;
 
 }
 
@@ -23,7 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    newsFuture = getNewsSources(widget.category);
+    newsFuture = getNewsSources(widget.category.toLowerCase());
   }
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
         key: scaffoldKey,
         drawer: customized,
-        appBar: CustomAppBar(title: title,),
+        appBar: CustomAppBar(title: title),
         body: Container(
             decoration: BoxDecoration(
                 image: DecorationImage(

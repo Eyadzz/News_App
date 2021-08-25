@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:news_application/utility/NewsTitle.dart';
+import 'package:news_application/Components/NewsTitle.dart';
 import 'package:news_application/utility/api/NewsItem.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -10,7 +10,7 @@ class ArticlePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("SPORTS"),
+        title: Text("Sports",style: TextStyle(fontSize: 22, fontFamily: "Exo", fontWeight: FontWeight.w600)),
         centerTitle: true,
         shape: ContinuousRectangleBorder(
           borderRadius: BorderRadius.only(
@@ -40,18 +40,18 @@ class ArticlePage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(15.0),
               child: GestureDetector(
-                  onTap: (){
-                    _launchURL(news.url);
-                  },
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Text('View Full Article'),
-                      Icon(
+                onTap: (){
+                  _launchURL(news.url);
+                },
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Text('View Full Article'),
+                    Icon(
                         Icons.arrow_right_outlined
-                      ),
-                    ],
-                  ),
+                    ),
+                  ],
+                ),
               ),
             )
 

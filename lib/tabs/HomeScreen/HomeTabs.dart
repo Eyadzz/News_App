@@ -22,21 +22,21 @@ class _HomeTabsState extends State<HomeTabs> {
           child: Column(
             children: [
               TabBar(
-                onTap: (index){
-                  setState(() {
-                    SelectedIndex=index;
-                  });
-                },
+                  onTap: (index){
+                    setState(() {
+                      SelectedIndex=index;
+                    });
+                  },
                   isScrollable: true,
                   indicatorColor: Colors.transparent,
                   tabs: widget.sources.map((source) => TabItem(source,widget.sources.indexOf(source)==SelectedIndex)).toList()
               ),
               Expanded(child: TabBarView(
-                children: widget.sources.map((source) => NewsPart(source)).toList()
+                  children: widget.sources.map((source) => NewsPart(source)).toList()
               )
-            )
-          ],
-    ),
+              )
+            ],
+          ),
         ));
   }
 }

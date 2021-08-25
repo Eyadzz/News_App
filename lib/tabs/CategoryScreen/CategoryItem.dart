@@ -18,7 +18,7 @@ class _CategoryItemState extends State<CategoryItem> {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 5, vertical: 10),
       decoration: BoxDecoration(
-        color: widget.categoryData.backGroundColor,
+        color: widget.categoryData.backgroundColor,
         borderRadius: BorderRadius.only(topLeft: Radius.circular(widget.categoryData.pixelBorder),
             topRight: Radius.circular(widget.categoryData.pixelBorder),
             bottomLeft: Radius.circular(widget.categoryData.pixelBottomLeft),
@@ -26,9 +26,9 @@ class _CategoryItemState extends State<CategoryItem> {
       ),
       child: Column(
         children:[
-          Image.asset(widget.categoryData.image, height: 100,),
+          Image.asset(widget.categoryData.image, height: 110,),
           SizedBox(height: 5),
-          Text(widget.categoryData.title, style: TextStyle(fontFamily: "Pop_Bold", color: widget.categoryData.color, fontSize: 18))
+          Text(widget.categoryData.title, style: TextStyle(fontFamily: "Exo", color: widget.categoryData.color, fontWeight: FontWeight.w500, fontSize: 22))
         ]
       ),
     );

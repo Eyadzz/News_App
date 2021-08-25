@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:news_application/tabs/SettingsTab.dart';
-import '../Home.dart';
+import 'package:news_application/tabs/CategoryScreen/CategoryScreen.dart';
+import 'package:news_application/tabs/Settings/SettingsTab.dart';
 
 class SideMenu extends StatefulWidget {
   const SideMenu({Key? key}) : super(key: key);
@@ -10,6 +10,8 @@ class SideMenu extends StatefulWidget {
   @override
   _SideMenuState createState() => _SideMenuState();
 }
+
+
 
 class _SideMenuState extends State<SideMenu> {
   var colorLightTheme = Colors.white;
@@ -42,7 +44,7 @@ class _SideMenuState extends State<SideMenu> {
               onTap: () {
                 Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(builder:  (context) => Home()),
+                  MaterialPageRoute(builder:  (context) => CategoryScreen()),
                 );
               },
             ),

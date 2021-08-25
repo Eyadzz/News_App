@@ -20,7 +20,7 @@ Future<SourceResponse> getNewsSources(String category)async{
 
 Future <NewsResponse> getNewsArticles(Sources source) async
 {
-  final uri = Uri.https("newsapi.org", "/v2/everything", {'apiKey':'7f8d46f9393d4845b80565e3cec44ea6', 'sources':source.id, 'q':"football", 'sortBy':"publishedAt"});
+  final uri = Uri.https("newsapi.org", "/v2/everything", {'apiKey':'7f8d46f9393d4845b80565e3cec44ea6', 'sources':source.id, 'sortBy':"publishedAt"});
 
   final response = await http.get(uri);
 

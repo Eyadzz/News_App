@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:news_application/tabs//HomeScreen/HomeScreen.dart';
-import 'package:news_application/tabs/SettingsTab.dart';
-import 'Home.dart';
+import 'package:news_application/tabs/CategoryScreen/CategoryScreen.dart';
+import 'package:news_application/tabs/Settings/SettingsTab.dart';
 import 'utility/AppConfigProvider.dart';
 import 'package:provider/provider.dart';
 
@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
         final provider = Provider.of<AppConfigProvider>(buildContext);
 
         return MaterialApp(
+          debugShowCheckedModeBanner: false,
           localizationsDelegates: [
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
@@ -37,10 +38,10 @@ class MyApp extends StatelessWidget {
           ),
           routes: {
             HomeScreen.routeName: (context) =>HomeScreen('general'),
-            Home.routeName: (context) => Home(),
             SettingsTab.routeName: (context) => SettingsTab(),
+            CategoryScreen.routeName: (context)=> CategoryScreen(),
           },
-          initialRoute: Home.routeName,
+          initialRoute: CategoryScreen.routeName,
         );
       },
     );

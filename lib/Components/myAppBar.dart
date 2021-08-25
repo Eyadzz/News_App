@@ -15,6 +15,7 @@ class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
 
 class _CustomAppBarState extends State<CustomAppBar>{
   bool isSearching = false;
+  var primaryColor = Color.fromARGB(255, 57, 165, 82);
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -28,7 +29,7 @@ class _CustomAppBarState extends State<CustomAppBar>{
         ),
       ),
       elevation: 0,
-      backgroundColor: Color.fromARGB(255, 57, 165, 82),
+      backgroundColor: primaryColor,
       shape: ContinuousRectangleBorder(
           borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(80),
@@ -37,29 +38,30 @@ class _CustomAppBarState extends State<CustomAppBar>{
       actions: <Widget>[
         InkWell(
           child: isSearching ? Container(
-            width: 390,
+            width: 380,
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.fromLTRB(20,8.0,20,8),
               child: TextField(
-                onSubmitted: (txt){
+                onSubmitted: (toSearch){
                   setState(() {
-                    widget.title = txt;
+                    widget.title = toSearch;
                   });
                 },
                 style: TextStyle(
                   color: Colors.black,
                 ),
                 decoration:  InputDecoration(
-                  prefixIcon: IconButton(icon: Icon(Icons.close, color: Colors.grey), onPressed: (){setState(() {
+
+                  prefixIcon: IconButton(icon: Icon(Icons.close, color: primaryColor), onPressed: (){setState(() {
                     isSearching=false;
                   });},),
-                  suffixIcon: new Icon(Icons.search, color: Colors.grey),
+                  suffixIcon: new Icon(Icons.search, color: primaryColor, size: 30,),
                   fillColor: Colors.white,
                   filled: true,
                   hintText: "Search Article",
-                  hintStyle:  TextStyle(color: Colors.grey,fontWeight: FontWeight.w100,height: 2),
+                  hintStyle:  TextStyle(color: primaryColor,fontWeight: FontWeight.w100,height: 1.5),
                   contentPadding: const EdgeInsets.only(
-                      left: 14.0, bottom: 4.0, top: 30.0),
+                      left: 14.0, bottom: 4.0, top: 4.0),
                   focusedBorder: OutlineInputBorder(
                     borderSide: BorderSide.none,
                     borderRadius:  BorderRadius.circular(25.7),
@@ -76,7 +78,7 @@ class _CustomAppBarState extends State<CustomAppBar>{
               ),
             ),
           ) : Padding(
-            padding: const EdgeInsets.all(10.0),
+            padding: const EdgeInsets.all(12.0),
             child: Icon(Icons.search_rounded, size: 30,),
           ),
           onTap: () {
