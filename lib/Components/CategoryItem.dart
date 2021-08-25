@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:news_application/components/CategoryData.dart';
+import 'CategoryData.dart';
+
 class CategoryItem extends StatefulWidget {
   CategoryData categoryData;
 
