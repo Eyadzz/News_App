@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_application/Home.dart';
 import 'package:news_application/components/Category.dart';
+import 'package:news_application/components/CategoryData.dart';
 import 'package:news_application/tabs/HomeScreen/HomeScreen.dart';
 class CustomGridView extends StatefulWidget {
 
@@ -37,9 +38,10 @@ class _CustomGridViewState extends State<CustomGridView> {
           mainAxisSpacing: 20,
           crossAxisSpacing: 20,
           children: List.generate(images.length, (index){
+            CategoryData categoryData = CategoryData(image: images[index], categoryName: category[index], locationIsLeft: isLeft(index));
             return Container(
               child: InkWell(
-                child: Category(txt: category[index], locationIsLeft: isLeft(index), image: images[index],),
+                child: CategoryItem(categoryData: categoryData),
                 onTap: (){
                   Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>HomeScreen(category[index])));
                 },
