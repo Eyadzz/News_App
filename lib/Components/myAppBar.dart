@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+import 'package:news_application/utility/AppConfigProvider.dart';
+import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
 
 
@@ -16,11 +18,14 @@ class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
 class _CustomAppBarState extends State<CustomAppBar>{
   bool isSearching = false;
   var primaryColor = Color.fromARGB(255, 57, 165, 82);
+  late AppConfigProvider provider;
+
   @override
   Widget build(BuildContext context) {
+    provider = Provider.of<AppConfigProvider>(context);
     return AppBar(
       iconTheme: IconThemeData(color: Colors.white),
-      title: isSearching?  null : Text(widget.title??'News App', style: TextStyle(fontSize: 22, fontFamily: "Exo", fontWeight: FontWeight.w600)),
+      title: isSearching?  null : Text(widget.title??AppLocalizations.of(context)!.title, style: TextStyle(fontSize: 22, fontFamily: "Exo", fontWeight: FontWeight.w600)),
       centerTitle: isSearching? false : true,
       leading: isSearching? Container() : Builder(
         builder: (context) => IconButton(
@@ -58,7 +63,7 @@ class _CustomAppBarState extends State<CustomAppBar>{
                   suffixIcon: new Icon(Icons.search, color: primaryColor, size: 30,),
                   fillColor: Colors.white,
                   filled: true,
-                  hintText: "Search Article",
+                  hintText: AppLocalizations.of(context)!.searchArticle,
                   hintStyle:  TextStyle(color: primaryColor,fontWeight: FontWeight.w100,height: 1.5),
                   contentPadding: const EdgeInsets.only(
                       left: 14.0, bottom: 4.0, top: 4.0),

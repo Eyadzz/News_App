@@ -2,15 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:news_application/tabs/HomeScreen/HomeTabs.dart';
 import 'package:news_application/components/SideMenu.dart';
 import 'package:news_application/components/myAppBar.dart';
+import 'package:news_application/utility/AppConfigProvider.dart';
 import 'package:news_application/utility/api/ApiManager.dart';
 import 'package:news_application/utility/api/SourceResponse.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
   static final routeName = "News";
-  HomeScreen(this.category);
+  HomeScreen(this.title,this.category);
   String category;
+  String title;
 
 }
 
@@ -19,10 +22,12 @@ class _HomeScreenState extends State<HomeScreen> {
 
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   late Future<SourceResponse>newsFuture;
+  late AppConfigProvider provider;
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
+    //provider = Provider.of<AppConfigProvider>(context);
     newsFuture = getNewsSources(widget.category.toLowerCase());
   }
   @override
@@ -32,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
         key: scaffoldKey,
         drawer: customized,
-        appBar: CustomAppBar(title: title),
+        appBar: CustomAppBar(title: widget.title),
         body: Container(
             decoration: BoxDecoration(
                 image: DecorationImage(

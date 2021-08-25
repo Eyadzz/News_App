@@ -26,8 +26,7 @@ class _CategoryItemState extends State<CategoryItem> {
       ),
       child: Column(
         children:[
-          Image.asset(widget.categoryData.image, height: 110,),
-          SizedBox(height: 5),
+          Image.asset(widget.categoryData.image, height: 109,),
           Text(widget.categoryData.title, style: TextStyle(fontFamily: "Exo", color: widget.categoryData.color, fontWeight: FontWeight.w500, fontSize: 22))
         ]
       ),

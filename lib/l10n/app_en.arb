@@ -9,5 +9,13 @@
   "business" : "Business",
   "environment" : "Environment",
   "science" : "Science",
-  "language" : "Language"
+  "language" : "Language",
+  "english":"English",
+  "arabic":"Arabic",
+  "general": "General",
+  "viewFullArticle": "View Full Article",
+  "news": "News",
+  "drawerTitle": "News App!",
+  "errorLoading": "Error Loading News! Try again",
+  "searchArticle": "Search Article..."
 }

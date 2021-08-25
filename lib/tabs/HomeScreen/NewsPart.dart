@@ -2,9 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:news_application/tabs/HomeScreen/NewsListItem.dart';
+import 'package:news_application/utility/AppConfigProvider.dart';
 import 'package:news_application/utility/api/ApiManager.dart';
 import 'package:news_application/utility/api/NewsResponse.dart';
 import 'package:news_application/utility/api/Sources.dart';
+import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 
 class NewsPart extends StatefulWidget {
@@ -18,12 +21,15 @@ class NewsPart extends StatefulWidget {
 
 class _NewsPartState extends State<NewsPart> {
 
+  late AppConfigProvider provider;
   late Future<NewsResponse>newsFuture;
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
+    //provider =  Provider.of<AppConfigProvider>(context);
     newsFuture=getNewsArticles(widget.source);
+
   }
   @override
   Widget build(BuildContext context) {
@@ -39,7 +45,7 @@ class _NewsPartState extends State<NewsPart> {
                   return NewsListItem(snapShot.data!.articles[index]);},itemCount: snapShot.data!.articles.length,physics: const AlwaysScrollableScrollPhysics(),);
               }else if (snapShot.hasError){
                 return Center(
-                    child: Text("Error Loading News! Check Your Internet!")
+                    child: Text(AppLocalizations.of(context)!.errorLoading)
                 );}
               return Center(child: CircularProgressIndicator());
             },

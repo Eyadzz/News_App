@@ -5,6 +5,7 @@ import 'package:news_application/tabs/CategoryScreen/CategoryScreen.dart';
 import 'package:news_application/tabs/Settings/SettingsTab.dart';
 import 'utility/AppConfigProvider.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() {
   runApp(MyApp());
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           localizationsDelegates: [
+            AppLocalizations.delegate,
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
@@ -37,7 +39,7 @@ class MyApp extends StatelessWidget {
             primaryColor: primaryColor,
           ),
           routes: {
-            HomeScreen.routeName: (context) =>HomeScreen('general'),
+            HomeScreen.routeName: (context) =>HomeScreen('general','general'),
             SettingsTab.routeName: (context) => SettingsTab(),
             CategoryScreen.routeName: (context)=> CategoryScreen(),
           },
