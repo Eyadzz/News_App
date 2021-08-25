@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 class CategoryData{
   var color;
   var backGroundColor;
+  var title;
   var categoryName;
   var pixelBorder;
   var pixelBottomRight = 0.0;
@@ -10,7 +11,7 @@ class CategoryData{
   var image;
 
   CategoryData({this.backGroundColor = Colors.red, this.color = Colors.white,
-    required this.categoryName , this.pixelBorder = 30.0, required this.locationIsLeft,
-    required this.image
+    required this.title , this.pixelBorder = 30.0, required this.locationIsLeft,
+    required this.image, this.categoryName
   });
 }

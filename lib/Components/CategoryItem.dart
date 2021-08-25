@@ -28,7 +28,7 @@ class _CategoryItemState extends State<CategoryItem> {
         children:[
           Image.asset(widget.categoryData.image, height: 100,),
           SizedBox(height: 5),
-          Text(widget.categoryData.categoryName, style: TextStyle(fontFamily: "Pop_Bold", color: widget.categoryData.color, fontSize: 18))
+          Text(widget.categoryData.title, style: TextStyle(fontFamily: "Pop_Bold", color: widget.categoryData.color, fontSize: 18))
         ]
       ),
     );
