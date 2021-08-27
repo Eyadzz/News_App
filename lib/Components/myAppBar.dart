@@ -49,7 +49,8 @@ class _CustomAppBarState extends State<CustomAppBar>{
               child: TextField(
                 onSubmitted: (toSearch){
                   setState(() {
-                    widget.title = toSearch;
+                    toSearch = "+" +toSearch;
+                    provider.setSearchingString(toSearch);
                   });
                 },
                 style: TextStyle(
