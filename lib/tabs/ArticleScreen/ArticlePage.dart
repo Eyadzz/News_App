@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:news_application/Components/NewsTitle.dart';
+import 'package:news_application/utility/AppConfigProvider.dart';
 import 'package:news_application/utility/api/NewsItem.dart';
+import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ArticlePage extends StatelessWidget {
   final NewsItem news;
+  late AppConfigProvider provider;
   ArticlePage(this.news);
   @override
   Widget build(BuildContext context) {
+    provider =  Provider.of<AppConfigProvider>(context);
+
     return Scaffold(
       appBar: AppBar(
-        title: Text("Sports",style: TextStyle(fontSize: 22, fontFamily: "Exo", fontWeight: FontWeight.w600)),
+        title: Text(provider.getArticleTitle(),style: TextStyle(fontSize: 22, fontFamily: "Exo", fontWeight: FontWeight.w600)),
         centerTitle: true,
         shape: ContinuousRectangleBorder(
           borderRadius: BorderRadius.only(

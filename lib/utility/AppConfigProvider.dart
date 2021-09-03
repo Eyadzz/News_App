@@ -22,4 +22,18 @@ class AppConfigProvider extends ChangeNotifier
     return toSearch;
   }
 
+  String articleTitle = '';
+
+  void setArticleTitle(String articleTitle)
+  {
+    this.articleTitle = articleTitle;
+    notifyListeners();
+  }
+
+  String getArticleTitle()
+  {
+    return articleTitle;
+  }
+
+
 }

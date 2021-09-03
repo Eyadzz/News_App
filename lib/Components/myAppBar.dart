@@ -58,9 +58,12 @@ class _CustomAppBarState extends State<CustomAppBar>{
                 ),
                 decoration:  InputDecoration(
 
-                  prefixIcon: IconButton(icon: Icon(Icons.close, color: primaryColor), onPressed: (){setState(() {
-                    isSearching=false;
-                  });},),
+                  prefixIcon: Padding(
+                    padding: const EdgeInsets.fromLTRB(0,0,8,0),
+                    child: IconButton(icon: Icon(Icons.close, color: primaryColor), onPressed: (){setState(() {
+                      isSearching=false;
+                    });},),
+                  ),
                   suffixIcon: new Icon(Icons.search, color: primaryColor, size: 30,),
                   fillColor: Colors.white,
                   filled: true,

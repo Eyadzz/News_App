@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
             primaryColor: primaryColor,
           ),
           routes: {
-            HomeScreen.routeName: (context) =>HomeScreen('general','general'),
+            HomeScreen.routeName: (context) =>HomeScreen('',''),
             SettingsTab.routeName: (context) => SettingsTab(),
             CategoryScreen.routeName: (context)=> CategoryScreen(),
           },

@@ -48,7 +48,7 @@ class _SettingsTabState extends State<SettingsTab> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: EdgeInsets.fromLTRB(20, 50, 0, 0),
+                  padding: EdgeInsets.fromLTRB(20, 50, 20, 0),
                   child: Text(AppLocalizations.of(context)!.language,style: TextStyle(color: Colors.black,fontSize: 15,fontFamily: "Pop_Bold"),),
                 ),
                 Padding(

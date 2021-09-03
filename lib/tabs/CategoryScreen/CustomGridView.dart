@@ -43,6 +43,7 @@ class _CustomGridViewState extends State<CustomGridView> {
               child: InkWell(
                 child: CategoryItem(categoryData: categories[index]),
                 onTap: (){
+                  provider.setArticleTitle(categories[index].title);
                   Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>HomeScreen(categories[index].title,categories[index].categoryName)));
                 },
               ),
