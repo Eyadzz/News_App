@@ -15,3 +15,10 @@ This project is a starting point for a Flutter application.
 ![6](https://user-images.githubusercontent.com/66397595/130685412-ea6edf65-ad1a-469e-86f0-b6ae3b22d216.png)
 ![8](https://user-images.githubusercontent.com/66397595/130685426-62303e3e-8d63-4edc-aa73-c46ef5caeab5.png)
 
+## :dart: ​Clone the project
+
+> `$ git clone https://github.com/Eyadzz/News_App`
+
+## :busts_in_silhouette:  Contributers
+
+> [Eyad Youssef](https://github.com/Eyadzz), [Abdelrahman Ali](https://github.com/abdelrahmanali6), [Abdelrahman Ammar](https://github.com/Abdelrhman-ammar), [Khaled Samir](https://github.com/khaledsamirr) and [Omar Muhammed](https://github.com/OmarMohamed256)
