@@ -23,13 +23,7 @@ class _NewsPartState extends State<NewsPart> {
 
   late AppConfigProvider provider;
   late Future<NewsResponse>newsFuture;
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
 
-
-  }
   @override
   Widget build(BuildContext context) {
     provider =  Provider.of<AppConfigProvider>(context);

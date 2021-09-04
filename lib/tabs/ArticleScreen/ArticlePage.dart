@@ -40,8 +40,6 @@ class ArticlePage extends StatelessWidget {
                   child: Text(news.content)
               ),
             ),
-
-
             Padding(
               padding: const EdgeInsets.all(15.0),
               child: GestureDetector(
@@ -52,9 +50,7 @@ class ArticlePage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Text('View Full Article'),
-                    Icon(
-                        Icons.arrow_right_outlined
-                    ),
+                    Icon(Icons.arrow_right_outlined),
                   ],
                 ),
               ),

@@ -61,6 +61,7 @@ class _CustomAppBarState extends State<CustomAppBar>{
                   prefixIcon: Padding(
                     padding: const EdgeInsets.fromLTRB(0,0,8,0),
                     child: IconButton(icon: Icon(Icons.close, color: primaryColor), onPressed: (){setState(() {
+                      provider.setSearchingString('');
                       isSearching=false;
                     });},),
                   ),
