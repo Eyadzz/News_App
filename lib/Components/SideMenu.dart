@@ -19,7 +19,7 @@ class SideMenu extends StatefulWidget {
 class _SideMenuState extends State<SideMenu> {
   var colorLightTheme = Colors.white;
   late AppConfigProvider provider;
-  var textStyle = TextStyle(color: Colors.white,fontSize: 24, fontFamily: "Pop_Bold");
+  var textStyle = TextStyle(color: Colors.black,fontSize: 24, fontFamily: "Pop_Bold");
 
   @override
   Widget build(BuildContext context) {
