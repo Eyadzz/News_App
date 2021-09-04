@@ -4,7 +4,7 @@
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This project is made using Flutter.
 
 ## Screenshots
 ![0](https://user-images.githubusercontent.com/66397595/130685361-fbbbb076-bb40-4c41-a701-e8ecedc97e8e.png)
