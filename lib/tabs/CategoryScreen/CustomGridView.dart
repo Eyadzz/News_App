@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_application/tabs/HomeScreen/HomeScreen.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:news_application/tabs/HomeScreen/HomeScreenArgs.dart';
 import 'package:news_application/utility/AppConfigProvider.dart';
 import 'package:provider/provider.dart';
 import 'CategoryData.dart';
@@ -45,8 +44,7 @@ class _CustomGridViewState extends State<CustomGridView> {
                 child: CategoryItem(categoryData: categories[index]),
                 onTap: (){
                   provider.setArticleTitle(categories[index].title);
-                  Navigator.pushNamed(context,HomeScreen.routeName,arguments: HomeScreenArgs(categories[index].title,categories[index].categoryName));
-                  //Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>HomeScreen(categories[index].title,categories[index].categoryName)));
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>HomeScreen(categories[index].title,categories[index].categoryName)));
                 },
               ),
             );

@@ -16,6 +16,13 @@ class _SettingsTabState extends State<SettingsTab> {
   final List<String> Items = ["English","العربية"];
   static var item ;
   late AppConfigProvider provider;
+  PageController _myPage = PageController(initialPage: 2);
+
+  @override
+  void initState() {
+    super.initState();
+
+  }
 
   @override
   Widget build(BuildContext context) {

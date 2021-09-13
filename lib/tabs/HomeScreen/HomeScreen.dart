@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:news_application/tabs/HomeScreen/HomeScreenArgs.dart';
 import 'package:news_application/tabs/HomeScreen/HomeTabs.dart';
 import 'package:news_application/components/SideMenu.dart';
 import 'package:news_application/components/myAppBar.dart';
@@ -12,7 +11,9 @@ class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
   static final routeName = "News";
-
+  HomeScreen(this.title,this.category);
+  String category;
+  String title;
 
 }
 
@@ -22,8 +23,6 @@ class _HomeScreenState extends State<HomeScreen> {
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   late Future<SourceResponse>newsFuture;
   late AppConfigProvider provider;
-  late var args;
-
   @override
   void initState() {
     // TODO: implement initState
@@ -32,14 +31,14 @@ class _HomeScreenState extends State<HomeScreen> {
   }
   @override
   Widget build(BuildContext context) {
-    args = ModalRoute.of(context)!.settings.arguments as HomeScreenArgs;
     provider = Provider.of<AppConfigProvider>(context);
-    newsFuture = getNewsSources(args.category.toLowerCase(), provider.currentLocale);
+    newsFuture = getNewsSources(widget.category.toLowerCase(), provider.currentLocale);
+    var title = widget.category == 'general' ? 'Politics' : widget.category;
     SideMenu customized = SideMenu();
     return Scaffold(
         key: scaffoldKey,
         drawer: customized,
-        appBar: CustomAppBar(title: args.title),
+        appBar: CustomAppBar(title: widget.title),
         body: Container(
             decoration: BoxDecoration(
                 image: DecorationImage(
@@ -75,7 +74,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
   Future _refreshData() async {
     await Future.delayed(Duration(seconds: 1));
-    newsFuture = getNewsSources(args.category,provider.currentLocale);
+    newsFuture = getNewsSources(widget.category,provider.currentLocale);
     setState(() {});
   }
 }

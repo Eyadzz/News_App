@@ -19,7 +19,6 @@ class SideMenu extends StatefulWidget {
 class _SideMenuState extends State<SideMenu> {
   var colorLightTheme = Colors.white;
   late AppConfigProvider provider;
-  var textStyle = TextStyle(color: Colors.black,fontSize: 24, fontFamily: "Pop_Bold");
 
   @override
   Widget build(BuildContext context) {
@@ -36,21 +35,33 @@ class _SideMenuState extends State<SideMenu> {
               decoration: BoxDecoration(
                 color: Color.fromARGB(255, 57, 165, 82),
               ),
-              child: Text(AppLocalizations.of(context)!.drawerTitle, style: textStyle),
+              child: Text(AppLocalizations.of(context)!.drawerTitle,style: TextStyle(color: Colors.white,fontSize: 24,
+                fontFamily: "Pop_Bold",),),
             ),
             ListTile(
               leading: new Icon(Icons.view_list_rounded, size: 30, color: Colors.black,),
-              title: Text(AppLocalizations.of(context)!.categories, style: textStyle),
+              title: Text(AppLocalizations.of(context)!.categories,
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 24,
+                    fontFamily: "Pop_Bold",
+                  )),
               contentPadding: EdgeInsets.fromLTRB(10, 0, 0, 0),
               onTap: () {
-                provider.setSearchingString('');
-                Navigator.pushReplacement(context, MaterialPageRoute(builder:  (context) => CategoryScreen()),
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder:  (context) => CategoryScreen()),
                 );
               },
             ),
             ListTile(
               leading: new Icon(Icons.settings, size: 30,color: Colors.black,),
-              title: Text(AppLocalizations.of(context)!.settings, style: textStyle),
+              title: Text(AppLocalizations.of(context)!.settings,
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 24,
+                    fontFamily: "Pop_Bold",
+                  )),
               contentPadding: EdgeInsets.fromLTRB(10, 0, 0, 0),
               onTap: () {
                 Navigator.pushReplacement(

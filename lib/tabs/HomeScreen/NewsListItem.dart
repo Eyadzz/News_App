@@ -11,7 +11,9 @@ class NewsListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.push(context, MaterialPageRoute(builder: (context) => ArticlePage(news)),
+        Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => ArticlePage(news,)),
         );
       },
       child: NewsTitle(news.urlToImage,news.author,news.title,news.publishedAt),

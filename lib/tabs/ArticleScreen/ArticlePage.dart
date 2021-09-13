@@ -15,6 +15,7 @@ class ArticlePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color.fromRGBO(57, 165, 82, 1.0),
         title: Text(provider.getArticleTitle(),style: TextStyle(fontSize: 22, fontFamily: "Exo", fontWeight: FontWeight.w600)),
         centerTitle: true,
         shape: ContinuousRectangleBorder(
@@ -40,6 +41,8 @@ class ArticlePage extends StatelessWidget {
                   child: Text(news.content)
               ),
             ),
+
+
             Padding(
               padding: const EdgeInsets.all(15.0),
               child: GestureDetector(
@@ -50,7 +53,9 @@ class ArticlePage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Text('View Full Article'),
-                    Icon(Icons.arrow_right_outlined),
+                    Icon(
+                        Icons.arrow_right_outlined
+                    ),
                   ],
                 ),
               ),
